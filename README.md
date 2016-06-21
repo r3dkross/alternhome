@@ -1,6 +1,8 @@
 # alternhome
 Tuto pour l'accès ssh et scp sur hl
+
 Source: https://www.jeedom.com/forum/viewtopic.php?f=39&t=5541&hilit=altui&start=340
+
 Merci à amg0 créateur du plugin ALtui pour son travail et son aide précieuse
 
 1.Installer le Plugin AltUI sur Homelive :
@@ -64,7 +66,7 @@ sed -i -e "s/mode=/mode=1#/g" /usr/bin/mios-service-update_permissions.sh
 
 reboot
 
-3. Changer les coordonnées GPS de Homelive pour récupérer les bons horaires de coucher/lever de soleil:
+3.Changer les coordonnées GPS de Homelive pour récupérer les bons horaires de coucher/lever de soleil:
 
 -Récupérer les valeurs latitude et longitude en hexadécimal sur internet: http://www.coordonnees-gps.fr par exemple
 -Pour Marseille il s'agit de latitude=43.3 et longitude=5.4
