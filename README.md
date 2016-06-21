@@ -28,57 +28,57 @@ https://relay2.home-live.orange.fr/rela ... mand=home# url
 
 2.Entrer ces lignes de codes sous altui>divers>commande os:
 
-cat /etc/config/dropbear
+- cat /etc/config/dropbear
 
-vi /etc/config/dropbear
+- vi /etc/config/dropbear
 
-uci add dropbear dropbear
+- uci add dropbear dropbear
 
-uci set dropbear.@dropbear[-1].PasswordAuth=on
-uci set dropbear.@dropbear[-1].RootPasswordAuth=on
-uci set dropbear.@dropbear[-1].Interface=*
-uci set dropbear.@dropbear[-1].Port=2222
-uci set dropbear.@dropbear[-1].RootLogin=on
+- uci set dropbear.@dropbear[-1].PasswordAuth=on
+- uci set dropbear.@dropbear[-1].RootPasswordAuth=on
+- uci set dropbear.@dropbear[-1].Interface=*
+- uci set dropbear.@dropbear[-1].Port=2222
+- uci set dropbear.@dropbear[-1].RootLogin=on
 
-uci commit dropbear
+- uci commit dropbear
 
-/etc/init.d/dropbear restart
+- /etc/init.d/dropbear restart
 
 
 firewall:
 
-cat /etc/config/firewall
+- cat /etc/config/firewall
 
-vi /etc/config/firewall
+- vi /etc/config/firewall
 
-uci add firewall rule
+- uci add firewall rule
 
-uci set firewall.@rule[-1].src=wan
-uci set firewall.@rule[-1].target=ACCEPT
-uci set firewall.@rule[-1].proto=tcp
-uci set firewall.@rule[-1].dest_port=2222
+- uci set firewall.@rule[-1].src=wan
+- uci set firewall.@rule[-1].target=ACCEPT
+- uci set firewall.@rule[-1].proto=tcp
+- uci set firewall.@rule[-1].dest_port=2222
 
-uci commit firewall
+- uci commit firewall
 
-/etc/init.d/firewall restart
+- /etc/init.d/firewall restart
 
-sed -i -e "s/mode=/mode=1#/g" /usr/bin/mios-service-update_permissions.sh
+- sed -i -e "s/mode=/mode=1#/g" /usr/bin/mios-service-update_permissions.sh
 
-reboot
+- reboot
 
 3.Changer les coordonnées GPS de Homelive pour récupérer les bons horaires de coucher/lever de soleil:
 
--Récupérer les valeurs latitude et longitude en hexadécimal sur internet: http://www.coordonnees-gps.fr par exemple
--Pour Marseille il s'agit de latitude=43.3 et longitude=5.4
--Sous Altui créer une scène peu importe le nom
--Dans le champ lua rentrer les paramètres suivants:
+- Récupérer les valeurs latitude et longitude en hexadécimal sur internet: http://www.coordonnees-gps.fr par exemple
+- Pour Marseille il s'agit de latitude=43.3 et longitude=5.4
+- Sous Altui créer une scène peu importe le nom
+- Dans le champ lua rentrer les paramètres suivants:
 
   luup.attr_set ("latitude", 43.3, 0 )
   return true
   
--remplacez 43.3 par la valeur de votre latitude et refaite une autre scène pour la longitude
--Exécutez la scène
--Redémarrer le moteur luup dans l'onglet divers, faites un refresh de la page et normalement c'est good
--Pour vérifier créer une scène avec la condition du lever ou du coucher, enregistrez la
--Allez dans l'onglet plus>Controleur
--Vers le bas vous devriez trouver les latitudes et longitudes modifiées
+- remplacez 43.3 par la valeur de votre latitude et refaite une autre scène pour la longitude
+- Exécutez la scène
+- Redémarrer le moteur luup dans l'onglet divers, faites un refresh de la page et normalement c'est good
+- Pour vérifier créer une scène avec la condition du lever ou du coucher, enregistrez la
+- Allez dans l'onglet plus>Controleur
+- Vers le bas vous devriez trouver les latitudes et longitudes modifiées
