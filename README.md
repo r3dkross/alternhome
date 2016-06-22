@@ -13,8 +13,8 @@ Merci à amg0 créateur du plugin ALtui pour son travail et son aide précieuse
 - Cette URL ressemble à :
 https://relay2.home-live.orange.fr/rela ... /backup.sh
 - Copiez collez cette URL dans le navigateur et après 0A60000C0DD881AE113191772E71AF4D2BD4A0, ajoutez ceci :
-port_3480/data_request?id=action&serviceId=urn:micasaverde-com:serviceId:HomeAutomationGateway1&action=CreatePlugin&PluginNum=8246&Version=29881
-- Vous obtenez une URL du type : https://relay2.home-live.orange.fr/rela ... sion=26896
+port_3480/data_request?id=action&serviceId=urn:micasaverde-com:serviceId:HomeAutomationGateway1&action=CreatePlugin&PluginNum=8246&Version=31400
+- Vous obtenez une URL du type : https://relay2.home-live.orange.fr/rela ... sion=31400
 - Entrez cette URL dans un nouvel onglet de votre navigateur.
 - Cela va installer Altui. Vous allez obtenir un message d'erreur rouge, puis un "OK" en dessous.
 - Patientez 2 min.
