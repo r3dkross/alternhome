@@ -26,7 +26,8 @@ https://relay2.home-live.orange.fr/rela ... mand=home# url
 - Vous voila connecté sur AltUI.
 - Vous pouvez maintenant effectuer la mise à jour du plugin ALTUI via le menu prévu à cet effet.
 
-2.Entrer ces lignes de codes sous altui>divers>commande os:
+2.Activer l'accès en local et ssh:
+Entrer ces lignes de codes sous altui>divers>commande os:
 
 - cat /etc/config/dropbear
 
@@ -66,7 +67,7 @@ firewall:
 
 - reboot
 
-3.Changer les coordonnées GPS de Homelive pour récupérer les bons horaires de coucher/lever de soleil:
+3.(optionnel)Changer les coordonnées GPS de Homelive pour récupérer les bons horaires de coucher/lever de soleil:
 
 - Récupérer les valeurs latitude et longitude en hexadécimal sur internet: http://www.coordonnees-gps.fr par exemple
 - Pour Marseille il s'agit de latitude=43.3 et longitude=5.4
@@ -82,3 +83,7 @@ firewall:
 - Pour vérifier créer une scène avec la condition du lever ou du coucher, enregistrez la
 - Allez dans l'onglet plus>Controleur
 - Vers le bas vous devriez trouver les latitudes et longitudes modifiées
+
+4.(optionnel)Debloquer tous les menus
+-Le fichier de configuration etant sur une partition en lecture seule il va falloir le copier sur une partition en ecriture:
+-Supprimmer le fichier de config:
