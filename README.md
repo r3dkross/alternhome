@@ -87,12 +87,19 @@ firewall:
 4.(optionnel)Debloquer tous les menus
 -Le fichier de configuration etant sur une partition en lecture seule il va falloir le copier sur une -sauvegarde du fichier de config sur la partition :
 
-ls -s /mios/www/cmh/js/config/config.js /overlay/www/cmh/js/config/config.js.old    (Juste pour se souvenir)
+ls -s /mios/www/cmh/js/config/config.js /overlay/www/cmh/js/config/config.js.old    
 
--Supprimmer le fichier de config:
+(Juste pour se souvenir)
+
+-Supprimer le fichier de config:
 
 rm /overlay/www/cmh/js/config/config.js
 
--Copier 
+-Copier le fichier config.js sur la partition overlay:
 
 cp /mios/www/cmh/js/config/config.js /overlay/www/cmh/js/config/config.js
+
+
+Ensuite il va falloir editer le fichier config.js:
+
+Commenter les lignes a la fin du fichier commencant par delete
